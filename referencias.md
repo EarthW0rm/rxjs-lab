@@ -1,4 +1,4 @@
-#Referências 
+# Referências 
 
 - https://www.learnrxjs.io/learn-rxjs/concepts/rxjs-primer
 - https://rxmarbles.com/
