@@ -3,9 +3,7 @@ import { Observable } from 'rxjs';
 import { ResourceService } from './resource.service';
 import { PagedResults, People } from '../models';
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 export class PeoplesService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 

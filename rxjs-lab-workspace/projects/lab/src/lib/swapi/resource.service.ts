@@ -3,9 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PagedResults } from '../models';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ResourceService {
 	constructor(private http: HttpClient ) { }
 
