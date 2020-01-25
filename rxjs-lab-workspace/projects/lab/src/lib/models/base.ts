@@ -38,3 +38,10 @@ export interface Resource {
    */
   edited: string;
 }; // eslint-disable-line
+
+export interface JsendEnvelope<T> {
+  message?: string;
+  data: T;
+  status: 'success' | 'error' | 'fail';
+  code?: number
+}

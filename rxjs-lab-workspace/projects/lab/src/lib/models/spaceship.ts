@@ -4,7 +4,7 @@ Author: https://github.com/mrzzcn/swapi-typescript/tree/master/src/models
 
 import { Resource, ResourceUrl } from './base';
 
-export interface Starship extends Resource {
+export interface Spaceship extends Resource {
     name: string;
     model: string;
     manufacturer: string;
