@@ -3,9 +3,7 @@ import { ResourceService } from './resource.service';
 import { Spaceship, PagedResults } from '../models';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SpaceshipsService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 

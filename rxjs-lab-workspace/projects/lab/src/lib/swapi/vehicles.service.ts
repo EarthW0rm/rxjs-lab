@@ -3,9 +3,7 @@ import { Vehicle, PagedResults } from '../models';
 import { Observable } from 'rxjs';
 import { ResourceService } from './resource.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class VehiclesService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 
