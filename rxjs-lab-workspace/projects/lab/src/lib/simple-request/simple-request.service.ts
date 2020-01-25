@@ -1,19 +1,15 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PagedResults, Film } from '../models';
+import { FilmsService } from '../swapi/films.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class SimpleRequestService {
-	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private http: HttpClient ) { }
+	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private filmsService: FilmsService ) { }
 
 	public GetFilms(): Observable<PagedResults<Film>> {
-
-		const methodUri = `${this.swapiUrl}films`;
-
-		const _observable = this.http.get<PagedResults<Film>>(methodUri, { headers: {'Content-Type': 'application/json'}});
-		return _observable;
+		return this.filmsService.GetFilms();
 	}
 }
