@@ -4,7 +4,7 @@ Author: https://github.com/mrzzcn/swapi-typescript/tree/master/src/models
 
 import { Resource, ResourceUrl } from './base';
 
-export interface Species extends Resource {
+export interface Specie extends Resource {
     name: string;
     classification: string;
     designation: string;
