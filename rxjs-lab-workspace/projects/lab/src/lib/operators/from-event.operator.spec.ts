@@ -46,24 +46,24 @@ describe('Operador: fromEvent', async () => {
 
         const subscription$ = component.buttonStream$.subscribe(
             next => {
-                cicleCount += 1
+                cicleCount += 1;
                 console.log(`Click foi acionado: ${cicleCount}`);
 
-                if(cicleCount = 5) {
+                if (cicleCount === 5) {
                     subscription$.unsubscribe();
                     expect(cicleCount).toEqual(5);
                     done();
                 }
             },
-            error => { 
-                console.error(error); 
+            error => {
+                console.error(error);
             }
         );
 
         const buttonElement = componentTemplate.querySelector('#test-button');
 
-        for(var i=0; i < 5; i++) {
-            buttonElement.click(); //Simulando o click no botão.
+        for (let i = 0; i < 5; i++) {
+            buttonElement.click(); // Simulando o click no botão.
             fixture.detectChanges(); // Disparando o ciclo de vida do componente angular
         }
     });
