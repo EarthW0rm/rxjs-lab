@@ -8,16 +8,16 @@ export class VehiclesService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 
 	public GetVehicles(): Observable<PagedResults<Vehicle>> {
-		let methodUri = `${this.swapiUrl}vehicles`;
+		const methodUri = `${this.swapiUrl}vehicles`;
 
-		const _observable = this.resourceService.GetPagedResults<Vehicle>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetPagedResults<Vehicle>(methodUri);
+		return observable;
 	}
 
 	public GetVehicle(vehicleId: number): Observable<Vehicle> {
-		let methodUri = `${this.swapiUrl}vehicles/${vehicleId}`;
+		const methodUri = `${this.swapiUrl}vehicles/${vehicleId}`;
 
-		const _observable = this.resourceService.GetItem<Vehicle>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetItem<Vehicle>(methodUri);
+		return observable;
 	}
 }

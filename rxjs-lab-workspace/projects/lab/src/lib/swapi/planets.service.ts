@@ -8,16 +8,16 @@ export class PlanetsService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 
 	public GetPlanets(): Observable<PagedResults<Planet>> {
-		let methodUri = `${this.swapiUrl}planets`;
+		const methodUri = `${this.swapiUrl}planets`;
 
-		const _observable = this.resourceService.GetPagedResults<Planet>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetPagedResults<Planet>(methodUri);
+		return observable;
 	}
 
 	public GetPlanet(planetId: number): Observable<Planet> {
-		let methodUri = `${this.swapiUrl}planets/${planetId}`;
+		const methodUri = `${this.swapiUrl}planets/${planetId}`;
 
-		const _observable = this.resourceService.GetItem<Planet>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetItem<Planet>(methodUri);
+		return observable;
 	}
 }

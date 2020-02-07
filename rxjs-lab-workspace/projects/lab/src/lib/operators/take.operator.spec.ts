@@ -1,10 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
-
 describe('Take', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+	beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    expect(true).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(true).toBeTruthy();
+	});
 });

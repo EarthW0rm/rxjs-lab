@@ -8,16 +8,16 @@ export class FilmsService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService ) { }
 
 	public GetFilms(): Observable<PagedResults<Film>> {
-		let methodUri = `${this.swapiUrl}films`;
+		const methodUri = `${this.swapiUrl}films`;
 
-		const _observable = this.resourceService.GetPagedResults<Film>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetPagedResults<Film>(methodUri);
+		return observable;
 	}
 
 	public GetFilm(filmId: number): Observable<Film> {
-		let methodUri = `${this.swapiUrl}films/${filmId}`;
+		const methodUri = `${this.swapiUrl}films/${filmId}`;
 
-		const _observable = this.resourceService.GetItem<Film>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetItem<Film>(methodUri);
+		return observable;
 	}
 }

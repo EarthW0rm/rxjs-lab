@@ -8,16 +8,16 @@ export class SpaceshipsService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 
 	public GetSpaceships(): Observable<PagedResults<Spaceship>> {
-		let methodUri = `${this.swapiUrl}spaceships`;
+		const methodUri = `${this.swapiUrl}spaceships`;
 
-		const _observable = this.resourceService.GetPagedResults<Spaceship>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetPagedResults<Spaceship>(methodUri);
+		return observable;
 	}
 
 	public GetSpaceship(spaceshipId: number): Observable<Spaceship> {
-		let methodUri = `${this.swapiUrl}spaceships/${spaceshipId}`;
+		const methodUri = `${this.swapiUrl}spaceships/${spaceshipId}`;
 
-		const _observable = this.resourceService.GetItem<Spaceship>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetItem<Spaceship>(methodUri);
+		return observable;
 	}
 }

@@ -8,12 +8,12 @@ export class ResourceService {
 	constructor(private http: HttpClient ) { }
 
 	public GetPagedResults<T>(methodUri: string): Observable<PagedResults<T>> {
-		const _observable = this.http.get<PagedResults<T>>(methodUri, { headers: {'Content-Type': 'application/json'}});
-		return _observable;
+		const observable = this.http.get<PagedResults<T>>(methodUri, { headers: {'Content-Type': 'application/json'}});
+		return observable;
 	}
 
 	public GetItem<T>(methodUri: string): Observable<T> {
-		const _observable = this.http.get<T>(methodUri, { headers: {'Content-Type': 'application/json'}});
-		return _observable;
+		const observable = this.http.get<T>(methodUri, { headers: {'Content-Type': 'application/json'}});
+		return observable;
 	}
 }

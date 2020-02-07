@@ -8,16 +8,16 @@ export class PeoplesService {
 	constructor(@Inject('SWAPI_URL') private swapiUrl: string, private resourceService: ResourceService) { }
 
 	public GetPeoples(): Observable<PagedResults<People>> {
-		let methodUri = `${this.swapiUrl}people`;
+		const methodUri = `${this.swapiUrl}people`;
 
-		const _observable = this.resourceService.GetPagedResults<People>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetPagedResults<People>(methodUri);
+		return observable;
 	}
 
 	public GetPeople(peopleId: number): Observable<People> {
-		let methodUri = `${this.swapiUrl}people/${peopleId}`;
+		const methodUri = `${this.swapiUrl}people/${peopleId}`;
 
-		const _observable = this.resourceService.GetItem<People>(methodUri);
-		return _observable;
+		const observable = this.resourceService.GetItem<People>(methodUri);
+		return observable;
 	}
 }
