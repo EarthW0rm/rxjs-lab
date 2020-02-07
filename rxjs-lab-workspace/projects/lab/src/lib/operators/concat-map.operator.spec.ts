@@ -16,9 +16,11 @@ describe('Operador: concatMap', () => {
 		const spaceshipsService: SpaceshipsService = TestBed.get(SpaceshipsService);
 
 		const subscription$ = filmsService
-			.GetFilm(1)
+			.GetFilms()
 			.pipe(
+				switchMap(_ => from(_.results)),
 				switchMap(_ => from(_.starships)),
+				take(10),
 				concatMap(_ => {
 					const starshipId = parseInt(_.substr(31, _.substr(31).length - 1), 10);
 					return spaceshipsService.GetSpaceship(starshipId)
@@ -29,7 +31,7 @@ describe('Operador: concatMap', () => {
 			)
 			.subscribe(
 				next => {
-					console.log(`O Nome e modelo da espaço-nave é: ${next}`);
+					console.log(`concatMap: O Nome e modelo da espaço-nave é: ${next}`);
 				},
 				error => {
 					console.error(error);
