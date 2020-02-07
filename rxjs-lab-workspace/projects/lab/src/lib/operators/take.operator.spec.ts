@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { SwapiModule, FilmsService } from '../swapi';
-import { take, switchMap, count } from 'rxjs/operators';
+import { take, switchMap } from 'rxjs/operators';
 
-describe('Take', () => {
+describe('Operador: take', () => {
 	beforeEach(() =>
 		TestBed.configureTestingModule({
 			imports: [SwapiModule.forRoot()]
